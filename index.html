@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasan Md Rajib | Civil Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --text: #1f2937;
+      --muted: #617186;
+      --accent: #2563eb;
+      --accent-light: #3b82f6;
+      --accent-dark: #1e40af;
+      --soft: #e2e8f0;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --section-padding: 80px 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: var(--text);
+      position: relative;
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: white;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Header */
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-left img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+
+    .header-left .name-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .header-left .name-contact h1 {
+      font-size: 20px;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .header-left .name-contact p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--text);
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23ffffff"/></svg>');
+      background-size: 100% 100px;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+    }
+
+    /* Carousel */
+    .carousel-section {
+      padding: var(--section-padding);
+      background: var(--white);
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+      padding: 30px;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .carousel-control {
+      background: rgba(255, 255, 255, 0.8);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-control:hover {
+      background: white;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--soft);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-indicator.active {
+      background: var(--accent);
+    }
+
+    /* Main content */
+    main {
+      padding: 40px 0;
+    }
+
+    section {
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid var(--accent);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--text);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .muted-paragraph {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category {
+      margin-bottom: 30px;
+    }
+
+    .skill-category h4 {
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .skill-bar {
+      margin-bottom: 15px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .skill-progress {
+      height: 8px;
+      background: var(--soft);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-progress-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 1.5s ease;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-img {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .project-tag {
+      background: var(--soft);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+
+    .contact-form {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--soft);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      transition: border 0.3s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text);
+      color: white;
+      padding: 50px 0 20px;
+      position: relative;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h4::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #toTop {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    #toTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #toTop:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 36px;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        width: 200px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero {
+        height: 60vh;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .carousel-item img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-container">
+      <div class="header-left">
+        <img src="hasan.JPG" alt="Hasan Md Rajib">
+        <div class="name-contact">
+          <h1>Hasan Md Rajib</h1>
+          <p>Civil Engineer & Technical Interpreter</p>
+        </div>
+      </div>
+      <nav id="navbar">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Building Sustainable Infrastructure for Tomorrow</h2>
+        <p>Civil Engineer specializing in bridge & tunnel systems, hydraulic engineering, and sustainable construction
+          practices.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <div class="container">
+      <h2 class="section-title">Project Portfolio</h2>
+      <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+          <div class="carousel-item">
+            <img src="image/image.JPG" alt="Project image 1">
+            <div class="carousel-caption">
+              <h3>Road Construction Project</h3>
+              <p>Design and implementation of sustainable road infrastructure</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="image/image2.JPG" alt="Project image 2">
+            <div class="carousel-caption">
+              <h3>Bridge Engineering</h3>
+              <p>Structural analysis and design of modern bridge systems</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="image/image3.JPG" alt="Project image 3">
+            <div class="carousel-caption">
+              <h3>Site Supervision</h3>
+              <p>Quality control and safety oversight in construction projects</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <div class="carousel-control" id="prevBtn">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="carousel-control" id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="carousel-indicators" id="carouselIndicators">
+          <!-- Indicators will be added by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="card">
+        <p class="muted-paragraph">
+          I am an early-career civil engineer focused on developing sustainable and resilient infrastructure. My
+          research interests include Hydraulic Engineering, Bridge & Tunnel systems, Environmental, Transportation,
+          Geotechnical, and Structural Engineering. I aim to integrate modern technology with practical engineering to
+          advance safety and sustainability.
+        </p>
+        <p>
+          With experience in both technical engineering and cross-cultural communication, I bring a unique perspective
+          to infrastructure projects. My background includes site engineering, surveying, inspection, quality control,
+          and serving as a technical interpreter between Chinese, English, and Bengali stakeholders.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="card">
+        <h3>Technical Civil Engineer & Chinese Language Expert</h3>
+        <p class="muted-paragraph">China National Chemical Engineering Corporation Ltd. — Narsindi, Bangladesh | Feb
+          2020 - Aug 2023</p>
+        <ul>
+          <li>Performed site engineering, surveying, and inspection duties</li>
+          <li>Managed quality control and safety oversight on construction projects</li>
+          <li>Handled procurement, logistics, and project coordination</li>
+          <li>Served as technical interpreter bridging Chinese, English, and Bengali communication</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Online Teacher</h3>
+        <p class="muted-paragraph">Robi Ten Minute School — Dhaka, Bangladesh | 2020 - 2022</p>
+        <ul>
+          <li>Conducted English instruction and support to students online during school closures</li>
+          <li>Developed remote learning materials and assessment tools</li>
+          <li>Facilitated continuity in education through digital platforms</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="image/image4.JPG" alt="Road Design Project">
+          </div>
+          <div class="project-content">
+            <h3>Roadbed Design - Keji Balu Road</h3>
+            <p>General design of roadbed for Keji Balu Road in Xi'an, focusing on sustainable materials and efficient
+              drainage systems.</p>
+            <div class="project-tags">
+              <span class="project-tag">Road Engineering</span>
+              <span class="project-tag">Design</span>
+              <span class="project-tag">Sustainability</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <img src="image/image5.JPG" alt="Bridge Project">
+          </div>
+          <div class="project-content">
+            <h3>Bridge Structural Analysis</h3>
+            <p>Comprehensive structural analysis and design optimization for bridge systems using modern engineering
+              software.</p>
+            <div class="project-tags">
+              <span class="project-tag">Structural Analysis</span>
+              <span class="project-tag">Bridges</span>
+              <span class="project-tag">Midas</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <img src="image/image6.JPG" alt="Hydraulic Project">
+          </div>
+          <div class="project-content">
+            <h3>Hydraulic Engineering Research</h3>
+            <p>Research on sustainable hydraulic systems and water management solutions for urban infrastructure.</p>
+            <div class="project-tags">
+              <span class="project-tag">Hydraulics</span>
+              <span class="project-tag">Research</span>
+              <span class="project-tag">Water Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <h3>BSc in Civil Engineering</h3>
+        <p class="muted-paragraph">Xi’an Shiyou University | Sep 2021 – Jun 2025</p>
+        <p><strong>Thesis:</strong> General design of roadbed in Keji Balu Road, Xi’an</p>
+        <p><strong>Achievements:</strong> Outstanding Graduate Award (2025), Second Prize International Student Academic
+          Scholarship (2024)</p>
+      </div>
+      <div class="card">
+        <h3>Diploma in Engineering (Architecture & Interior Design Technology)</h3>
+        <p class="muted-paragraph">Dinajpur Polytechnic Institute | 2014 – 2018</p>
+      </div>
+      <div class="card">
+        <h3>Secondary School Certificate — Science</h3>
+        <p class="muted-paragraph">Bogra Technical School & College | 2008 – 2013</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Technical Engineering</h4>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Surveying</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Structural Analysis</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>AutoCAD</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Midas & PKPM</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Project Management</h4>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Quality Control</span>
+              <span>92%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Procurement & Logistics</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Safety Oversight</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Languages</h4>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Bengali (Native)</span>
+              <span>100%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>English (Professional)</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-info">
+              <span>Chinese (Competent)</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2 class="section-title">Certifications & Awards</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Outstanding Graduate Award</strong> — Xi’an Shiyou University (2025)</li>
+          <li><strong>First Prize</strong>, "Chinese Star" International Speech Competition — Xi’an (Dec 2024)</li>
+          <li><strong>Second Prize</strong>, International Student Academic Scholarship — Xi’an (2024)</li>
+          <li><strong>Third Prize</strong>, "Chinese Star" International Recitation Contest — Xi’an (2023)</li>
+          <li><strong>Tongji University Chinese Studies Winter Camp</strong> — Tongji (2023)</li>
+          <li><strong>Participant</strong>, Chinese Bridge Global Storytelling Contest — CLEC (2025)</li>
+          <li><strong>Outstanding Performance Award</strong> — CNCEC (2021)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p>+86 156 4080 6835</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>hasanmdrajib183@gmail.com</p>
+              <p>mdrajibhasanhasang@qq.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>Xi'an, China</p>
+              <p>Bogra, Bangladesh</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-passport"></i>
+            </div>
+            <div>
+              <h4>Passport</h4>
+              <p>A04669699</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send Me a Message</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Hasan Md Rajib</h4>
+          <p>Civil Engineer specializing in sustainable infrastructure, bridge & tunnel systems, and hydraulic
+            engineering.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Civil Engineering</a></li>
+            <li><a href="#">Structural Analysis</a></li>
+            <li><a href="#">Project Management</a></li>
+            <li><a href="#">Technical Interpretation</a></li>
+            <li><a href="#">Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone"></i> +86 156 4080 6835</li>
+            <li><i class="fas fa-envelope"></i> hasanmdrajib183@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Xi'an, China / Bogra, Bangladesh</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Hasan Md Rajib. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="toTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script>
+    // Carousel functionality
+    const carouselInner = document.getElementById('carouselInner');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const carouselIndicators = document.getElementById('carouselIndicators');
+
+    let currentIndex = 0;
+    const totalItems = carouselItems.length;
+
+    // Create indicators
+    for (let i = 0; i < totalItems; i++) {
+      const indicator = document.createElement('div');
+      indicator.classList.add('carousel-indicator');
+      if (i === 0) indicator.classList.add('active');
+      indicator.addEventListener('click', () => goToSlide(i));
+      carouselIndicators.appendChild(indicator);
+    }
+
+    function updateCarousel() {
+      carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update indicators
+      document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    }
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Auto-rotate carousel
+    let carouselInterval = setInterval(nextSlide, 5000);
+
+    // Pause on hover
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+    carousel.addEventListener('mouseleave', () => {
+      carouselInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Scroll animation: when section enters viewport, add class
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+
+          // Animate skill bars when skills section is in view
+          if (entry.target.id === 'skills') {
+            const skillBars = document.querySelectorAll('.skill-progress-bar');
+            skillBars.forEach(bar => {
+              const width = bar.style.width;
+              bar.style.width = '0';
+              setTimeout(() => {
+                bar.style.width = width;
+              }, 300);
+            });
+          }
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+    document.querySelectorAll('section').forEach(sec => {
+      observer.observe(sec);
+    });
+
+    // Go to top button
+    const toTopBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        toTopBtn.classList.add('show');
+      } else {
+        toTopBtn.classList.remove('show');
+      }
+    });
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      contactForm.reset();
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.padding = '5px 0';
+        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+      } else {
+        header.style.padding = '0';
+        header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
